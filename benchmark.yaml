@@ -1,0 +1,2 @@
+entrypoints:
+  default: random_baseline.py
