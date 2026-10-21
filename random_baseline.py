@@ -35,7 +35,8 @@ def main():
     clusters_path = os.path.join(args.output_dir, f"{args.name}.clusters.tsv")
     clusters_df = pd.DataFrame({
         "cell_id": cell_names,
-        "leiden": random_labels  # <--- Changed from "cluster" to "leiden"
+        "leiden": random_labels,   # Satisfies any modules looking for Leiden
+        "louvain": random_labels   # Satisfies any modules looking for Louvain
     })
     clusters_df.to_csv(clusters_path, sep="\t", index=False)
     
